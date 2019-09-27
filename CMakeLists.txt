@@ -16,7 +16,7 @@ set(BOOST_ARCHIVE_VERSION "${BOOST_VERSION_MAJOR}_${BOOST_VERSION_MINOR}_${BOOST
 # Boost
 rez_set_archive(
     BOOST_URL boost/boost_${BOOST_ARCHIVE_VERSION}.tar.gz
-    https://derpy.derp
+    https://sourceforge.net/projects/boost/files/boost/1.61.0/boost_1_61_0.tar.gz/download
 )
 
 # The environment variable REZ_TMP_PATH is meant to point to a location such as "/tmp/rez".
