@@ -25,7 +25,7 @@ echo -e "\n"
 echo -e "[CONFIGURE] Running the configuration script from Boost-${BOOST_VERSION}..."
 echo -e "\n"
 
-${EXTRACT_PATH}/bootstrap.sh --prefix=${INSTALL_PATH}
+${EXTRACT_PATH}/bootstrap.sh --prefix=${INSTALL_PATH} --with-python=${REZ_PYTHON_ROOT}/bin/python --with-python-root=${REZ_PYTHON_ROOT}
 
 echo -e "\n"
 echo -e "[CONFIGURE] Finished configuring Boost-${BOOST_VERSION}!"

@@ -16,7 +16,8 @@ description = \
 
 requires = [
     "gcc-6",
-    "cmake-3"
+    "cmake-3",
+    "python-2.7"
 ]
 
 variants = [
