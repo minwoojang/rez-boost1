@@ -25,7 +25,7 @@ echo -e "\n"
 echo -e "[INSTALL] Installing Boost-${BOOST_VERSION}..."
 echo -e "\n"
 
-${EXTRACT_PATH}/b2 -j${REZ_BUILD_THREAD_COUNT} --build-dir=${BUILD_PATH} install
+${EXTRACT_PATH}/bjam -j${REZ_BUILD_THREAD_COUNT} --build-dir=${BUILD_PATH} cflags=-fPIC cxxflags=-fPIC install
 
 echo -e "\n"
 echo -e "[INSTALL] Finished installing Boost-${BOOST_VERSION}!"
