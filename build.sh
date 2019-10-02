@@ -18,6 +18,16 @@ echo -e "[BUILD][ARGS] EXTRACT PATH: ${EXTRACT_PATH}"
 echo -e "[BUILD][ARGS] BUILD PATH: ${BUILD_PATH}"
 echo -e "[BUILD][ARGS] BOOST VERSION: ${BOOST_VERSION}"
 
+# We check if the arguments variables we need are correctly set.
+# If not, we abort the process.
+if [[ -z ${EXTRACT_PATH} || -z ${BUILD_PATH} || -z ${BOOST_VERSION} ]]; then
+    echo -e "\n"
+    echo -e "[BUILD][ARGS] One or more of the argument variables are empty. Aborting..."
+    echo -e "\n"
+
+    exit 1
+fi
+
 # We build Boost.
 echo -e "\n"
 echo -e "[BUILD] Building Boost-${BOOST_VERSION}..."

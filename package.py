@@ -15,9 +15,9 @@ description = \
     """
 
 requires = [
-    "gcc-6",
-    "cmake-3",
-    "python-2.7"
+    "gcc-6+",
+    "cmake-3+",
+    "python-2.7+"
 ]
 
 variants = [
@@ -33,8 +33,11 @@ build_system = "cmake"
 with scope("config") as config:
     config.build_thread_count = "logical_cores"
 
-#TODO: Use the SHA1 of the archive instead.
-uuid = "boost-1.61.0"
+uuid = "boost-{version}".format(version=str(version))
 
 def commands():
     env.LD_LIBRARY_PATH.prepend("{root}/lib")
+
+    # Helper environment variables.
+    env.BOOST_INCLUDE_PATH.set("{root}/include")
+    env.BOOST_LIBRARY_PATH.set("{root}/lib")

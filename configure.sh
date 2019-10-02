@@ -18,12 +18,22 @@ echo -e "[CONFIGURE][ARGS] EXTRACT PATH: ${EXTRACT_PATH}"
 echo -e "[CONFIGURE][ARGS] INSTALL PATH: ${INSTALL_PATH}"
 echo -e "[CONFIGURE][ARGS] BOOST VERSION: ${BOOST_VERSION}"
 
-cd ${EXTRACT_PATH}
+# We check if the arguments variables we need are correctly set.
+# If not, we abort the process.
+if [[ -z ${EXTRACT_PATH} || -z ${INSTALL_PATH} || -z ${BOOST_VERSION} ]]; then
+    echo -e "\n"
+    echo -e "[CONFIGURE][ARGS] One or more of the argument variables are empty. Aborting..."
+    echo -e "\n"
+
+    exit 1
+fi
 
 # We run the configuration script of Boost.
 echo -e "\n"
 echo -e "[CONFIGURE] Running the configuration script from Boost-${BOOST_VERSION}..."
 echo -e "\n"
+
+cd ${EXTRACT_PATH}
 
 ${EXTRACT_PATH}/bootstrap.sh --prefix=${INSTALL_PATH} --with-python=${REZ_PYTHON_ROOT}/bin/python --with-python-root=${REZ_PYTHON_ROOT}
 

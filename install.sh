@@ -18,12 +18,22 @@ echo -e "[INSTALL][ARGS] EXTRACT PATH: ${EXTRACT_PATH}"
 echo -e "[INSTALL][ARGS] BUILD PATH: ${BUILD_PATH}"
 echo -e "[INSTALL][ARGS] BOOST VERSION: ${BOOST_VERSION}"
 
-cd ${EXTRACT_PATH}
+# We check if the arguments variables we need are correctly set.
+# If not, we abort the process.
+if [[ -z ${EXTRACT_PATH} || -z ${BUILD_PATH} || -z ${BOOST_VERSION} ]]; then
+    echo -e "\n"
+    echo -e "[CONFIGURE][ARGS] One or more of the argument variables are empty. Aborting..."
+    echo -e "\n"
+
+    exit 1
+fi
 
 # We install Boost.
 echo -e "\n"
 echo -e "[INSTALL] Installing Boost-${BOOST_VERSION}..."
 echo -e "\n"
+
+cd ${EXTRACT_PATH}
 
 ${EXTRACT_PATH}/bjam -j${REZ_BUILD_THREAD_COUNT} --build-dir=${BUILD_PATH} cflags=-fPIC cxxflags=-fPIC install
 
