@@ -15,8 +15,8 @@ description = \
     """
 
 requires = [
-    "gcc-6+",
     "cmake-3+",
+    "gcc-6+",
     "python-2.7+"
 ]
 

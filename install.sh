@@ -35,7 +35,12 @@ echo -e "\n"
 
 cd ${EXTRACT_PATH}
 
-${EXTRACT_PATH}/bjam -j${REZ_BUILD_THREAD_COUNT} --build-dir=${BUILD_PATH} cflags=-fPIC cxxflags=-fPIC install
+${EXTRACT_PATH}/bjam \
+    -j${REZ_BUILD_THREAD_COUNT} \
+    --build-dir=${BUILD_PATH} \
+    cflags=-fPIC \
+    cxxflags=-fPIC \
+    install
 
 echo -e "\n"
 echo -e "[INSTALL] Finished installing Boost-${BOOST_VERSION}!"
