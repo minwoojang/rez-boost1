@@ -1,39 +1,40 @@
 name = "boost"
 
-version = "1.61.0"
+version = "1.80.0"
 
-authors = [
-    "Beman Dawes",
-    "David Abrahams"
-]
-
-description = \
-    """
+description = """
     Boost is a set of libraries for the C++ programming language that provide support for tasks and structures such
     as linear algebra, pseudorandom number generation, multithreading, image processing, regular expressions,
     and unit testing.
     """
 
+authors = [
+    "Beman Dawes",
+    "David Abrahams",
+]
+
 requires = [
-    "cmake-3+",
-    "gcc-6+",
-    "python-2.7+"
+    "cmake-3",
+    "gcc-4.8+",
+    "python-3<4",
 ]
 
 variants = [
-    ["platform-linux"]
+    [
+        "platform-linux",
+    ],
 ]
 
 tools = [
-    "boost"
+    "boost",
 ]
 
 build_system = "cmake"
 
+
 with scope("config") as config:
     config.build_thread_count = "logical_cores"
 
-uuid = "boost-{version}".format(version=str(version))
 
 def commands():
     env.LD_LIBRARY_PATH.prepend("{root}/lib")

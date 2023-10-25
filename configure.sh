@@ -38,7 +38,8 @@ cd ${EXTRACT_PATH}
 ${EXTRACT_PATH}/bootstrap.sh \
     --prefix=${INSTALL_PATH} \
     --with-python=${REZ_PYTHON_ROOT}/bin/python \
-    --with-python-root=${REZ_PYTHON_ROOT}
+    --with-python-root=${REZ_PYTHON_ROOT} \
+    --with-python-version=${REZ_PYTHON_MAJOR_VERSION}.${REZ_PYTHON_MINOR_VERSION}
 
 echo -e "\n"
 echo -e "[CONFIGURE] Finished configuring Boost-${BOOST_VERSION}!"

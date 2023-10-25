@@ -35,7 +35,7 @@ echo -e "\n"
 
 cd ${EXTRACT_PATH}
 
-${EXTRACT_PATH}/bjam \
+${EXTRACT_PATH}/b2 \
     -j${REZ_BUILD_THREAD_COUNT} \
     --build-dir=${BUILD_PATH} \
     cflags="-fPIC" \
