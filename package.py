@@ -1,6 +1,6 @@
 name = "boost"
 
-version = "1.80.0"
+version = "1.86.0"
 
 description = """
     Boost is a set of libraries for the C++ programming language that provide support for tasks and structures such
@@ -15,14 +15,12 @@ authors = [
 
 requires = [
     "cmake-3",
-    "gcc-4.8+",
+    "gcc-6.5",
     "python-3<4",
 ]
 
 variants = [
-    [
-        "platform-linux",
-    ],
+    ["platform-linux","arch-x86_64"]
 ]
 
 tools = [
