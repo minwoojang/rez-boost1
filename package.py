@@ -15,7 +15,7 @@ authors = [
 
 requires = [
     "cmake-3",
-    "gcc-6.5",
+    "gcc-11",
     "python-3<4",
 ]
 
